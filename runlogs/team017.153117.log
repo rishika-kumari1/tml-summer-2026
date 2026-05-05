@@ -1,0 +1,36 @@
+000 (153117.000.000) 2026-04-23 15:02:48 Job submitted from host: <10.143.248.60:9618?addrs=10.143.248.60-9618&alias=conduit.hpc.uni-saarland.de&noUDP&sock=schedd_1591_df44>
+...
+040 (153117.000.000) 2026-04-23 15:03:06 Finished transferring input files
+...
+001 (153117.000.000) 2026-04-23 15:03:08 Job executing on host: <10.143.248.24:9618?PrivAddr=%3c10.143.250.24:9618%3fsock%3dstartd_167684_dae9%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.24-9618&alias=tenos.hpc.uni-saarland.de&noUDP&sock=startd_167684_dae9>
+	SlotName: teaching1_1@tenos.hpc.uni-saarland.de
+	AvailableGPUs = { GPUs_GPU_c97c1695 }
+	CondorScratchDir = "/raid/condor/lib/condor/execute/dir_423974"
+	Cpus = 1
+	Disk = 4309
+	GPUs = 1
+	GPUs_GPU_c97c1695 = [ Id = "GPU-c97c1695"; Capability = 6.0; DeviceName = "Tesla P100-SXM2-16GB"; DeviceUuid = "c97c1695-36f7-e7dd-85d7-83691e4a60a5"; ECCEnabled = true; NvidiaDriver = "550.163.01"; DriverVersion = 12.4; DevicePciBusId = "0000:04:00.0"; GlobalMemoryMb = 16269; MaxSupportedVersion = 12040 ]
+	Memory = 4096
+...
+040 (153117.000.000) 2026-04-23 15:03:11 Started transferring output files
+...
+040 (153117.000.000) 2026-04-23 15:03:11 Finished transferring output files
+...
+005 (153117.000.000) 2026-04-23 15:03:11 Job terminated.
+	(1) Normal termination (return value 1)
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	706  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	706  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :     0.01        1         1 
+	   Disk (KB)            :    22           0      4309 
+	   GPUs                 :                 1         1 "GPU-c97c1695"
+	   Memory (MB)          :              4096      4096 
+	   TimeExecute (s)      :     3                       
+	   TimeSlotBusy (s)     :     6                       
+...
