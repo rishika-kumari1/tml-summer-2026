@@ -11,7 +11,6 @@ from torch.utils.data import Dataset
 from torchvision.models import resnet18
 import torchvision.transforms as transforms
 
-
 # config
 BASE = Path(__file__).parent
 PUB_PATH = BASE / "pub.pt"
@@ -20,7 +19,7 @@ MODEL_PATH = BASE / "model.pt"
 OUTPUT_CSV = BASE / "submission.csv"
 
 BASE_URL = "http://34.63.153.158"   #DONOT CHANGE
-API_KEY = "YOUR_API_KEY_HERE"
+API_KEY = "e0c557b2952bebef969bd58692e1205e"
 TASK_ID = "01-mia"  #DONOT CHANGE
 
 
@@ -65,13 +64,19 @@ priv_ds = torch.load(PRIV_PATH, weights_only=False)
 MEAN = [0.7406, 0.5331, 0.7059]
 STD = [0.1491, 0.1864, 0.1301]
 
-transform = transforms.Compose([
-    transforms.Resize(32),
+base_transform = transforms.Compose([
+    transforms.Resize((32, 32)),
     transforms.Normalize(mean=MEAN, std=STD),
 ])
 
-pub_ds.transform = transform
-priv_ds.transform = transform
+aug_transform = transforms.Compose([
+    transforms.RandomHorizontalFlip(),
+    transforms.RandomRotation(10),
+    transforms.Resize((32, 32)),
+    transforms.Normalize(mean=MEAN, std=STD),
+])
+pub_ds.transform = base_transform
+priv_ds.transform = base_transform
 
 
 # load model
@@ -86,17 +91,69 @@ model.eval()
 
 
 # create random submission (remove this later or it will rewrite your actual submission)
-print("Creating random submission...")
-ids = [str(i) for i in priv_ds.ids]
+from torch.utils.data import DataLoader
+import torch.nn.functional as F
+import numpy as np
+
+print("Running membership inference attack...")
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model = model.to(device)
+
+def safe_collate(batch):
+    batch = [b for b in batch if b is not None]
+
+    if len(batch[0]) == 4:
+        ids, imgs, labels, _ = zip(*batch)   
+    else:
+        ids, imgs, labels = zip(*batch)
+
+    return list(ids), torch.stack(imgs), torch.tensor(labels)
+
+loader = DataLoader(
+    priv_ds,
+    batch_size=64,
+    shuffle=False,
+    collate_fn=safe_collate
+)
+criterion = torch.nn.CrossEntropyLoss(reduction="none")
+
+all_ids = []
+all_scores = []
+
+with torch.no_grad():
+    for ids_batch, imgs, labels in loader:
+        imgs, labels = imgs.to(device), labels.to(device)
+        
+        logits = model(imgs)
+        probs = F.softmax(logits, dim=1)
+
+        aug_losses = []
+        for _ in range(5): 
+            aug_imgs = torch.stack([
+                aug_transform(img) for img in imgs
+            ]).to(device)
+            aug_logits = model(aug_imgs)
+            aug_losses.append(criterion(aug_logits, labels))
+        
+        avg_aug_loss = torch.stack(aug_losses).mean(dim=0)
+        scores = -avg_aug_loss 
+        
+        all_ids.extend(ids_batch)
+        all_scores.extend(scores.cpu().numpy().tolist())
+    
+# normalize scores (important)
+scores = np.array(all_scores)
+scores = torch.tensor(all_scores)
+scores = torch.sigmoid(scores)   # keeps [0,1] range naturally
 
 df = pd.DataFrame({
-    "id": ids,
-    "score": [random.random() for _ in ids]
+    "id": [str(i) for i in all_ids],
+    "score": scores
 })
 
 df.to_csv(OUTPUT_CSV, index=False)
 print("Saved:", OUTPUT_CSV)
-
 
 # submit
 def die(msg):
