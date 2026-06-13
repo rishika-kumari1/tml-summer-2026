@@ -1,0 +1,111 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.1.1
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+Launching Refined Robust Optimization Scheme...
+Epoch 001/80 | Train Acc: 0.4820 | Val Acc: 0.5850
+ Saved structural checkpoint (val_acc=0.5850)
+Epoch 002/80 | Train Acc: 0.6033 | Val Acc: 0.6356
+ Saved structural checkpoint (val_acc=0.6356)
+Epoch 003/80 | Train Acc: 0.6378 | Val Acc: 0.6266
+Epoch 004/80 | Train Acc: 0.6589 | Val Acc: 0.6704
+ Saved structural checkpoint (val_acc=0.6704)
+Epoch 005/80 | Train Acc: 0.6824 | Val Acc: 0.6604
+Epoch 006/80 | Train Acc: 0.7012 | Val Acc: 0.6654
+Epoch 007/80 | Train Acc: 0.7289 | Val Acc: 0.7040
+ Saved structural checkpoint (val_acc=0.7040)
+Epoch 008/80 | Train Acc: 0.7472 | Val Acc: 0.7342
+ Saved structural checkpoint (val_acc=0.7342)
+Epoch 009/80 | Train Acc: 0.7632 | Val Acc: 0.7550
+ Saved structural checkpoint (val_acc=0.7550)
+Epoch 010/80 | Train Acc: 0.7793 | Val Acc: 0.7238
+Epoch 011/80 | Train Acc: 0.7912 | Val Acc: 0.6552
+Epoch 012/80 | Train Acc: 0.7997 | Val Acc: 0.7002
+Epoch 013/80 | Train Acc: 0.8100 | Val Acc: 0.7508
+Epoch 014/80 | Train Acc: 0.8143 | Val Acc: 0.7646
+ Saved structural checkpoint (val_acc=0.7646)
+Epoch 015/80 | Train Acc: 0.8272 | Val Acc: 0.6774
+Epoch 016/80 | Train Acc: 0.8385 | Val Acc: 0.6810
+Epoch 017/80 | Train Acc: 0.8445 | Val Acc: 0.7512
+Epoch 018/80 | Train Acc: 0.8529 | Val Acc: 0.7746
+ Saved structural checkpoint (val_acc=0.7746)
+Epoch 019/80 | Train Acc: 0.8587 | Val Acc: 0.7990
+ Saved structural checkpoint (val_acc=0.7990)
+Epoch 020/80 | Train Acc: 0.8635 | Val Acc: 0.7106
+Epoch 021/80 | Train Acc: 0.8693 | Val Acc: 0.7832
+Epoch 022/80 | Train Acc: 0.8782 | Val Acc: 0.8112
+ Saved structural checkpoint (val_acc=0.8112)
+Epoch 023/80 | Train Acc: 0.8820 | Val Acc: 0.8080
+Epoch 024/80 | Train Acc: 0.8874 | Val Acc: 0.7044
+Epoch 025/80 | Train Acc: 0.8942 | Val Acc: 0.7600
+Epoch 026/80 | Train Acc: 0.9013 | Val Acc: 0.8268
+ Saved structural checkpoint (val_acc=0.8268)
+Epoch 027/80 | Train Acc: 0.9077 | Val Acc: 0.8070
+Epoch 028/80 | Train Acc: 0.9147 | Val Acc: 0.8066
+Epoch 029/80 | Train Acc: 0.9176 | Val Acc: 0.7434
+Epoch 030/80 | Train Acc: 0.9220 | Val Acc: 0.8010
+Epoch 031/80 | Train Acc: 0.9289 | Val Acc: 0.7946
+Epoch 032/80 | Train Acc: 0.9312 | Val Acc: 0.7694
+Epoch 033/80 | Train Acc: 0.9377 | Val Acc: 0.8186
+Epoch 034/80 | Train Acc: 0.9367 | Val Acc: 0.8018
+Epoch 035/80 | Train Acc: 0.9476 | Val Acc: 0.7928
+Epoch 036/80 | Train Acc: 0.9493 | Val Acc: 0.7564
+Epoch 037/80 | Train Acc: 0.9506 | Val Acc: 0.7914
+Epoch 038/80 | Train Acc: 0.9558 | Val Acc: 0.7792
+Epoch 039/80 | Train Acc: 0.9586 | Val Acc: 0.8158
+Epoch 040/80 | Train Acc: 0.9601 | Val Acc: 0.8190
+Epoch 041/80 | Train Acc: 0.9640 | Val Acc: 0.7928
+Epoch 042/80 | Train Acc: 0.9668 | Val Acc: 0.7176
+Epoch 043/80 | Train Acc: 0.9687 | Val Acc: 0.7454
+Epoch 044/80 | Train Acc: 0.9713 | Val Acc: 0.8160
+Epoch 045/80 | Train Acc: 0.9753 | Val Acc: 0.7166
+Epoch 046/80 | Train Acc: 0.9759 | Val Acc: 0.7132
+Epoch 047/80 | Train Acc: 0.9780 | Val Acc: 0.7320
+Epoch 048/80 | Train Acc: 0.9785 | Val Acc: 0.7450
+Epoch 049/80 | Train Acc: 0.9814 | Val Acc: 0.7858
+Epoch 050/80 | Train Acc: 0.9830 | Val Acc: 0.7920
+Epoch 051/80 | Train Acc: 0.9854 | Val Acc: 0.7700
+Epoch 052/80 | Train Acc: 0.9866 | Val Acc: 0.7210
+Epoch 053/80 | Train Acc: 0.9883 | Val Acc: 0.7802
+Epoch 054/80 | Train Acc: 0.9893 | Val Acc: 0.7766
+Epoch 055/80 | Train Acc: 0.9901 | Val Acc: 0.7438
+Epoch 056/80 | Train Acc: 0.9912 | Val Acc: 0.7692
+Epoch 057/80 | Train Acc: 0.9926 | Val Acc: 0.7876
+Epoch 058/80 | Train Acc: 0.9926 | Val Acc: 0.7418
+Epoch 059/80 | Train Acc: 0.9944 | Val Acc: 0.7362
+Epoch 060/80 | Train Acc: 0.9958 | Val Acc: 0.7692
+Epoch 061/80 | Train Acc: 0.9953 | Val Acc: 0.7850
+Epoch 062/80 | Train Acc: 0.9960 | Val Acc: 0.7152
+Epoch 063/80 | Train Acc: 0.9968 | Val Acc: 0.7644
+Epoch 064/80 | Train Acc: 0.9973 | Val Acc: 0.7360
+Epoch 065/80 | Train Acc: 0.9978 | Val Acc: 0.7356
+Epoch 066/80 | Train Acc: 0.9983 | Val Acc: 0.7864
+Epoch 067/80 | Train Acc: 0.9981 | Val Acc: 0.7278
+Epoch 068/80 | Train Acc: 0.9985 | Val Acc: 0.7762
+Epoch 069/80 | Train Acc: 0.9986 | Val Acc: 0.7298
+Epoch 070/80 | Train Acc: 0.9987 | Val Acc: 0.7674
+Epoch 071/80 | Train Acc: 0.9989 | Val Acc: 0.7526
+Epoch 072/80 | Train Acc: 0.9990 | Val Acc: 0.7352
+Epoch 073/80 | Train Acc: 0.9991 | Val Acc: 0.7304
+Epoch 074/80 | Train Acc: 0.9990 | Val Acc: 0.7330
+Epoch 075/80 | Train Acc: 0.9992 | Val Acc: 0.7296
+Epoch 076/80 | Train Acc: 0.9992 | Val Acc: 0.7284
+Epoch 077/80 | Train Acc: 0.9992 | Val Acc: 0.7772
+Epoch 078/80 | Train Acc: 0.9993 | Val Acc: 0.7364
+Epoch 079/80 | Train Acc: 0.9993 | Val Acc: 0.7410
+Epoch 080/80 | Train Acc: 0.9992 | Val Acc: 0.7224
+
+ Sanity Test Results:
+Output tensor footprint: torch.Size([1, 9])
+Target weights saved successfully.
